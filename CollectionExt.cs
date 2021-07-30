@@ -25,6 +25,13 @@ namespace FancyCSharp
             }
         }
 
+        public static void ForEach<T>(this T[] self,Action<T> act)
+        {
+            foreach (var i in self) {
+                act.Invoke(i);
+            }
+        }
+
         public static (T, int) RandPick<T>(this IList<T> self)
         {
             var index = (int)(rnd.NextDouble() * self.Count);
