@@ -33,5 +33,10 @@ namespace FancyCSharp
             }
             return self.Substring(start, length);
         }
+
+        public static bool IsValid(this string self)
+        {
+            return self != null && self.Trim() != "";
+        }
     }
 }
