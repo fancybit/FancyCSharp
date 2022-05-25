@@ -1,0 +1,30 @@
+{
+  "name": "top.fancybit.fancycsharp",
+  "version": "1.0.0",
+  "unity": "2020.2",
+  "unityRelease": "0a19",
+  "displayName": "FancyCSharp",
+  "description": "Some Extension about C#",
+  "keywords": [
+    "C#",
+    "fancybit"
+  ],
+  "author":{ "name" : "fancybit",
+    "email" : "fancybit@qq.com",
+    "url" : "https://www.fancybit.top/"
+  },
+  "category": "C#",
+  "dependencies": {
+
+  },
+  "relatedPackages": {
+    "top.fancybit.fancyunity"
+  },
+  "samples": [
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/fancybit/fancy-csharp.git",
+    "revision": "b2d4457944540732c063467987aad36334fd69b5"
+  }
+}
