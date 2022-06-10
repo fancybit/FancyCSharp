@@ -25,9 +25,10 @@ namespace FancyCSharp
             }
         }
 
-        public static void ForEach<T>(this T[] self,Action<T> act)
+        public static void ForEach<T>(this T[] self, Action<T> act)
         {
-            foreach (var i in self) {
+            foreach (var i in self)
+            {
                 act.Invoke(i);
             }
         }
@@ -79,6 +80,70 @@ namespace FancyCSharp
                 }
             }
             return count;
+        }
+
+        public static T FBMin<T>(this IEnumerable<T> self, Func<T, float> sortFunc)
+        {
+            float min = float.MaxValue;
+            T result = default(T);
+            foreach (var e in self)
+            {
+                var curValue = sortFunc(e);
+                if (curValue < min)
+                {
+                    min = curValue;
+                    result = e;
+                }
+            }
+            return result;
+        }
+
+        public static T FBMin<T>(this IEnumerable<T> self, Func<T, double> sortFunc)
+        {
+            double min = double.MaxValue;
+            T result = default(T);
+            foreach (var e in self)
+            {
+                var curValue = sortFunc(e);
+                if (curValue < min)
+                {
+                    min = curValue;
+                    result = e;
+                }
+            }
+            return result;
+        }
+
+        public static T FBMin<T>(this IEnumerable<T> self, Func<T, int> sortFunc)
+        {
+            int min = int.MaxValue;
+            T result = default(T);
+            foreach (var e in self)
+            {
+                var curValue = sortFunc(e);
+                if (curValue < min)
+                {
+                    min = curValue;
+                    result = e;
+                }
+            }
+            return result;
+        }
+
+        public static T FBMin<T>(this IEnumerable<T> self, Func<T, Decimal> sortFunc)
+        {
+            Decimal min = Decimal.MaxValue;
+            T result = default(T);
+            foreach (var e in self)
+            {
+                var curValue = sortFunc(e);
+                if (curValue < min)
+                {
+                    min = curValue;
+                    result = e;
+                }
+            }
+            return result;
         }
     }
 }
