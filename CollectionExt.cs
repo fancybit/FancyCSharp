@@ -145,5 +145,15 @@ namespace FancyCSharp
             }
             return result;
         }
+
+        public static bool Exists<T>(this IList<T> self, Func<T, bool> predict)
+        {
+            foreach (var e in self)
+            {
+                if (predict(e))
+                    return true;
+            }
+            return false;
+        }
     }
 }
